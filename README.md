@@ -1,1 +1,1 @@
-# how-to-deploy-a-project-with-Coolify
+# How-to-deploy-a-Project-with-Coolify
