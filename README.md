@@ -1,1 +1,201 @@
-# How-to-deploy-a-Project-with-Coolify
+# HOW TO DEPLOY A PROJECT BY COOLIFY PLATFORM
+
+## 1. Overview
+
+Coolify is an open-source platform accepting that we deploy an application, a database, or anything else like a service at our VPS. It is designed as the solution instead of a cloud service such as Heroku, Vercel, etc., and we have full access that is not binding providers.
+
+For more information: [Coolify](https://coolify.io)
+
+## 2. Why do we use Coolify? 
+
+We have many years of experience in deploying applications for small-scale enterprises, and one of the key challenges we often face is optimizing operational costs. Why is that? When we decide to launch a project, the factors that determine a product’s success are speed, simplicity, and the ability to solve real-world problems. Therefore, choosing the right technology and operational platform has helped us achieve both success and profitability in our tech business.
+
+As a result, we always seek open-source platforms that allow us to operate with the lowest possible cost. Coolify is one of the platforms we have chosen to run the technology products we provide.
+
+### 2.1. Benefits of Using Coolify
+
+1. Cost-saving:
+
+  - Avoid expensive fees from cloud service providers by using your own servers.
+
+2. Security and privacy:
+
+  - Your data is stored locally, minimizing risks related to security and privacy.
+
+3. High customizability:
+
+  - Freely configure and deploy services according to your specific needs without limitations from providers.
+
+4. Strong community support:
+
+  - Join the Coolify user community to receive support and share experiences.
+
+### 2.2. Drawbacks of Using Coolify
+
+1. Requires technical knowledge:
+
+  - Self-hosted servers: You need to be familiar with Linux, SSH, Docker, domains, SSL, and network configurations.
+
+  - Challenging for beginners: Not very beginner-friendly for those without a DevOps or sysadmin background.
+
+
+2. You are fully responsible for security and maintenance.
+
+  - No professional operations team like those at cloud providers.
+
+  - You're responsible for security updates, patching vulnerabilities, preventing DDoS attacks, monitoring logs, and system supervision.
+
+
+3. Limited horizontal scalability
+
+  - Manual scale-out: Unlike Vercel or AWS, which offer auto-scaling, Coolify does not automatically scale containers under heavy load.
+
+  - If you want to scale, you must:
+
+    - Manually add nodes.
+
+    - Manually configure load balancing (e.g., with Traefik, Nginx proxy, etc.).
+
+4. Resources depend on the server you choose.
+
+  - Using a weak VPS may result in poor performance, affecting your entire application.
+
+  - No high-availability (HA) zones like premium cloud tiers.
+
+5. Still under development
+
+  - Some advanced features may be unstable (e.g., internal load balancing, advanced backups).
+
+  - Updates can introduce bugs if not thoroughly tested before upgrading Coolify.
+
+6. Limited disaster recovery capabilities
+
+  - No built-in automatic snapshots by default; you must configure backups and restore strategies yourself (e.g., backups, volume mounts).
+
+  - If the server crashes without a backup, all data may be lost.
+
+7. Small community
+
+  - Though growing quickly, Coolify’s community is still small compared to Docker, Kubernetes, or Netlify → less troubleshooting documentation.
+
+  - For support, you often need to ask on Discord or GitHub and wait for assistance. 
+
+## 3. Deploying a Project by Coolify
+
+### 1. Architecture
+
+  - Coolify is built on a Docker and GitOps architecture, designed to simplify the deployment, management, and monitoring of applications and databases on self-managed infrastructure.
+
+  - ![coolify_architecture](coolify_architecture.png)
+
+  - #### 1.1 Core Components in Coolify Architecture
+    - <strong>Coolify App:</strong> The main application (web interface) that allows you to manage applications, services, logs, and deployment environments.
+
+    - <strong>Docker Engine:</strong>: Coolify uses Docker to run applications, services, and databases as containers.
+
+    - <strong>Docker Compose:</strong> Coolify initializes service stacks using Docker Compose, supporting multi-container setups (app + database + proxy).
+
+    - <strong>Traefik:</strong> A built-in reverse proxy for routing and automatic SSL provisioning for applications.
+
+    - <strong>Git Integration:</strong> Supports GitHub, GitLab, Bitbucket, etc., to automatically clone repositories, build, and deploy applications.
+
+    - <strong>Internal API + WebSocket:</strong> Handles communication between the UI, backend, and agent to provide real-time deployment status updates.
+
+  - #### 1.2 Deployment Architecture
+    - ![coolify_deployment_architecture](coolify_deployment_architecture.png)
+    - 1: Automatically pull source code from Git.
+    - 2: Build Docker images.
+    - 3: Deploy containers with internal networking.
+    - 4: Assign routes via Traefik and provision SSL.
+
+  - #### 1.3 Network & Security Management
+    - <strong>Internal Docker Network:</strong> Coolify uses Docker networks to isolate containers.
+    
+    - <strong>Traefik Proxy:</strong> Handles internet access and automatically issues SSL certificates via Let's Encrypt.
+    
+    - <strong>Firewall:</strong> You should block all ports except for HTTP/HTTPS and SSH.
+
+### 2. Installation
+  - For this guide, we used Hostinger installing Coolify automatically.
+  - Reference: [Install Document](https://coolify.io/docs/get-started/installation).
+
+### 3. How to deploy a project in Coolify
+
+  - #### 3.1 using Nixpacks 
+
+    1. Create a Project
+
+      - 1: Click Projects.
+      - 2: Click Add.
+    
+    ![coolify_1](coolify_1.png)
+      
+      - 3: Fill the name.
+      - 4: Click continue.
+    
+    ![coolify_2](coolify_2.png)
+
+  
+    2. Create a Resource
+     
+      - 1: Click Add New Resource.
+
+    ![coolify_3](coolify_3.png)
+    
+      - Note: There are so many resources you could deployment (maybe we deploy a Bitcoin miner service in the future :D ).
+      - 2: In this guide, we choose the private repository.
+
+    ![coolify_4](coolify_4.png)
+    
+      - Note: You must be adding your SSH key of your Github in Security.
+      - Reference: [Setup SSH Key](https://coolify.io/docs/knowledge-base/git/github/integration).
+    
+    ![coolify_5](coolify_5.png)
+
+      - 3: Select Private Repository Resource and your SSH key added.
+    
+    ![coolify_8](coolify_8.png)
+    ![coolify_6](coolify_6.png)
+
+      - 4: Fill the repo URL.
+      - 5: Fill the branch.
+      - 6: Use Nixpacks.
+      - 7: Select the public port.
+      - 8: If you want to deploy static page, let check the box (useful for Front-end).
+    
+    ![coolify_7](coolify_7.png)
+
+      - 9: Config the name of application.
+      - 10: Generate domain.
+    
+    ![coolify_9](coolify_9.png)
+
+      - 11: Maybe config the container labels.
+    
+    ![coolify_10](coolify_10.png)
+
+      - 12: Maybe config the container name for beautiful :D.
+
+    ![coolify_11](coolify_11.png)
+
+      - 13: Setup environment variable for Security (If you want to config private variables).
+
+    ![coolify_12](coolify_12.png)
+
+      - 14: Setup the limited resources for VPS to ignore Leak of Memory or Overload CPU :D (If you like this).
+
+    ![coolify_13](coolify_13.png)
+
+    Note: For the other advanced features, please refer the document :D.
+
+      - 15: Let create the nixpacks.toml file and push to the branch used to deploy.
+    
+    ![coolify_14](coolify_14.png)
+
+      - Finally: Click deploy/redeploy and check Deployments history, you also check the logs and see that the application will be serving. It is success !! :D.
+      
+    ![coolify_15](coolify_15.png)
+
+    ![coolify_16](coolify_16.png)
+
+  - #### 3.2 using Docker service (writing... :D)
