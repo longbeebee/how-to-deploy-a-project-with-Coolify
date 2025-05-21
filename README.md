@@ -11,6 +11,8 @@
     - [1. Architecture](#1-architecture)
     - [2. Installation](#2-installation)
     - [3. How to deploy a project in Coolify](#3-how-to-deploy-a-project-in-coolify)
+      - [3.1 Using Nixpacks](#31-using-nixpacks)
+      - [3.2 Using Docker service (writing... :D)](#32-using-docker-service-writing-d)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -136,82 +138,96 @@ As a result, we always seek open-source platforms that allow us to operate with 
   - Reference: [Install Document](https://coolify.io/docs/get-started/installation).
 
 ### 3. How to deploy a project in Coolify
+#### 3.1 Using Nixpacks 
 
-  - #### 3.1 using Nixpacks 
+1. Create a Project
 
-    1. Create a Project
+- 1: Click Projects.
 
-      - 1: Click Projects.
-      - 2: Click Add.
-    
+- 2: Click Add.
+
     ![coolify_1](coolify_1.png)
-      
-      - 3: Fill the name.
-      - 4: Click continue.
-    
+
+- 3: Fill in the name.
+
+- 4: Click continue.
+
     ![coolify_2](coolify_2.png)
 
-  
-    2. Create a Resource
-     
-      - 1: Click Add New Resource.
+
+2. Create a Resource
+
+- 1: Click Add New Resource.
 
     ![coolify_3](coolify_3.png)
-    
-      <strong>There are so many resources you could deployment ( maybe we deploy a Bitcoin miner service in the future :D ).</strong>
-      - 2: In this guide, we choose the private repository.
+
+      There are so many resources you could deploy (maybe we'll deploy a Bitcoin miner service in the future :D ).</strong>
+
+- 2: In this guide, we choose the private repository.
 
     ![coolify_4](coolify_4.png)
-    
+
       <strong>You must be adding your SSH key of your Github in Security.</strong>
-      - Reference: [Setup SSH Key](https://coolify.io/docs/knowledge-base/git/github/integration).
-    
+
+- Reference: [Setup SSH Key](https://coolify.io/docs/knowledge-base/git/github/integration).
+
     ![coolify_5](coolify_5.png)
 
-      - 3: Select Private Repository Resource and your SSH key added.
-    
+- 3: Select Private Repository Resource, and your SSH key added.
+
     ![coolify_8](coolify_8.png)
+
     ![coolify_6](coolify_6.png)
 
-      - 4: Fill the repo URL.
-      - 5: Fill the branch.
-      - 6: Use Nixpacks.
-      - 7: Select the public port.
-      - 8: If you want to deploy static page, let check the box ( useful for Front-end ).
-    
+- 4: Fill in the repo URL.
+
+- 5: Fill the branch.
+
+- 6: Use Nixpacks.
+
+- 7: Select the public port.
+
+- 8: If you want to deploy a static page, let's check the box (useful for front-end ).
+
     ![coolify_7](coolify_7.png)
 
-      - 9: Config the name of application.
-      - 10: Generate domain.
-    
+
+- 9: Configure the name of the application.
+
+- 10: Generate domain.
+
     ![coolify_9](coolify_9.png)
 
-      - 11: Maybe config the container labels.
-    
+- 11: Maybe configure the container labels.
+
     ![coolify_10](coolify_10.png)
 
-      - 12: Maybe config the container name for beautiful.
+
+- 12: Maybe configure the container name for beautiful.
 
     ![coolify_11](coolify_11.png)
 
-      - 13: Setup environment variables for Security ( If you want to config private variables ).
+
+- 13: Set up environment variables for security (if you want to configure private variables ).
 
     ![coolify_12](coolify_12.png)
 
-      - 14: Setup the limited resources for VPS to ignore Leak of Memory or Overload CPU.
+- 14: Set up the limited resources for VPS to ignore leak of memory or overload CPU.
 
     ![coolify_13](coolify_13.png)
 
-    <strong>For the other advanced features, please refer the document.</strong>
+    For the other advanced features, please refer to the document.</strong>
 
-      - 15: Let create the nixpacks.toml file and push to the branch used to deploy.
-    
+
+- 15: Let's create the nixpacks.toml file and push it to the branch used to deploy.
+
     ![coolify_14](coolify_14.png)
 
-      - Finally: Click deploy/redeploy and check Deployments history, you also check the logs and see that the application will be serving. It is success !! :D.
-      
+
+- Finally, click Deploy/Redeploy and check the deployment history. You can also check the logs and see that the application will be serving. It is a success!! :D.
+
     ![coolify_15](coolify_15.png)
 
     ![coolify_16](coolify_16.png)
 
-  - #### 3.2 using Docker service (writing... :D)
+#### 3.2 Using Docker service (writing... :D)
