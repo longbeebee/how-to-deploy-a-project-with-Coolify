@@ -1,3 +1,19 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+- [HOW TO DEPLOY A PROJECT BY COOLIFY PLATFORM](#how-to-deploy-a-project-by-coolify-platform)
+  - [1. Overview](#1-overview)
+  - [2. Why do we use Coolify?](#2-why-do-we-use-coolify)
+    - [2.1. Benefits of Using Coolify](#21-benefits-of-using-coolify)
+    - [2.2. Drawbacks of Using Coolify](#22-drawbacks-of-using-coolify)
+  - [3. Deploying a Project by Coolify](#3-deploying-a-project-by-coolify)
+    - [1. Architecture](#1-architecture)
+    - [2. Installation](#2-installation)
+    - [3. How to deploy a project in Coolify](#3-how-to-deploy-a-project-in-coolify)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 # HOW TO DEPLOY A PROJECT BY COOLIFY PLATFORM
 
 ## 1. Overview
@@ -142,12 +158,12 @@ As a result, we always seek open-source platforms that allow us to operate with 
 
     ![coolify_3](coolify_3.png)
     
-      - Note: There are so many resources you could deployment (maybe we deploy a Bitcoin miner service in the future :D ).
+      <strong>There are so many resources you could deployment ( maybe we deploy a Bitcoin miner service in the future :D ).</strong>
       - 2: In this guide, we choose the private repository.
 
     ![coolify_4](coolify_4.png)
     
-      - Note: You must be adding your SSH key of your Github in Security.
+      <strong>You must be adding your SSH key of your Github in Security.</strong>
       - Reference: [Setup SSH Key](https://coolify.io/docs/knowledge-base/git/github/integration).
     
     ![coolify_5](coolify_5.png)
@@ -161,7 +177,7 @@ As a result, we always seek open-source platforms that allow us to operate with 
       - 5: Fill the branch.
       - 6: Use Nixpacks.
       - 7: Select the public port.
-      - 8: If you want to deploy static page, let check the box (useful for Front-end).
+      - 8: If you want to deploy static page, let check the box ( useful for Front-end ).
     
     ![coolify_7](coolify_7.png)
 
@@ -174,19 +190,19 @@ As a result, we always seek open-source platforms that allow us to operate with 
     
     ![coolify_10](coolify_10.png)
 
-      - 12: Maybe config the container name for beautiful :D.
+      - 12: Maybe config the container name for beautiful.
 
     ![coolify_11](coolify_11.png)
 
-      - 13: Setup environment variable for Security (If you want to config private variables).
+      - 13: Setup environment variables for Security ( If you want to config private variables ).
 
     ![coolify_12](coolify_12.png)
 
-      - 14: Setup the limited resources for VPS to ignore Leak of Memory or Overload CPU :D (If you like this).
+      - 14: Setup the limited resources for VPS to ignore Leak of Memory or Overload CPU.
 
     ![coolify_13](coolify_13.png)
 
-    Note: For the other advanced features, please refer the document :D.
+    <strong>For the other advanced features, please refer the document.</strong>
 
       - 15: Let create the nixpacks.toml file and push to the branch used to deploy.
     
