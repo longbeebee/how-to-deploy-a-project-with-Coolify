@@ -161,7 +161,7 @@ As a result, we always seek open-source platforms that allow us to operate with 
 
     ![coolify_3](coolify_3.png)
 
-      There are so many resources you could deploy (maybe we'll deploy a Bitcoin miner service in the future :D ).</strong>
+      <strong>There are so many resources you could deploy (maybe we'll deploy a Bitcoin miner service in the future :D ).</strong>
 
 - 2: In this guide, we choose the private repository.
 
@@ -216,7 +216,7 @@ As a result, we always seek open-source platforms that allow us to operate with 
 
     ![coolify_13](coolify_13.png)
 
-    For the other advanced features, please refer to the document.</strong>
+    <strong>For the other advanced features, please refer to the document.</strong>
 
 
 - 15: Let's create the nixpacks.toml file and push it to the branch used to deploy.
