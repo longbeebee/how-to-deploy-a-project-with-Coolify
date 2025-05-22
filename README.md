@@ -32,39 +32,39 @@ As a result, we always seek open-source platforms that allow us to operate with 
 
 ### 2.1. Benefits of Using Coolify
 
-1. Cost-saving:
+1. <strong>Cost-saving:</strong>
 
   - Avoid expensive fees from cloud service providers by using your own servers.
 
-2. Security and privacy:
+2. <strong>Security and privacy:</strong>
 
   - Your data is stored locally, minimizing risks related to security and privacy.
 
-3. High customizability:
+3. <strong>High customizability:</strong>
 
   - Freely configure and deploy services according to your specific needs without limitations from providers.
 
-4. Strong community support:
+4. <strong>Strong community support:</strong>
 
   - Join the Coolify user community to receive support and share experiences.
 
 ### 2.2. Drawbacks of Using Coolify
 
-1. Requires technical knowledge:
+1. <strong>Requires technical knowledge:</strong>
 
   - Self-hosted servers: You need to be familiar with Linux, SSH, Docker, domains, SSL, and network configurations.
 
   - Challenging for beginners: Not very beginner-friendly for those without a DevOps or sysadmin background.
 
 
-2. You are fully responsible for security and maintenance.
+2. <strong>You are fully responsible for security and maintenance.</strong>
 
   - No professional operations team like those at cloud providers.
 
   - You're responsible for security updates, patching vulnerabilities, preventing DDoS attacks, monitoring logs, and system supervision.
 
 
-3. Limited horizontal scalability
+3. <strong>Limited horizontal scalability</strong>
 
   - Manual scale-out: Unlike Vercel or AWS, which offer auto-scaling, Coolify does not automatically scale containers under heavy load.
 
@@ -74,25 +74,25 @@ As a result, we always seek open-source platforms that allow us to operate with 
 
     - Manually configure load balancing (e.g., with Traefik, Nginx proxy, etc.).
 
-4. Resources depend on the server you choose.
+4. <strong>Resources depend on the server you choose.</strong>
 
   - Using a weak VPS may result in poor performance, affecting your entire application.
 
   - No high-availability (HA) zones like premium cloud tiers.
 
-5. Still under development
+5. <strong>Still under development</strong>
 
   - Some advanced features may be unstable (e.g., internal load balancing, advanced backups).
 
   - Updates can introduce bugs if not thoroughly tested before upgrading Coolify.
 
-6. Limited disaster recovery capabilities
+6. <strong>Limited disaster recovery capabilities</strong>
 
   - No built-in automatic snapshots by default; you must configure backups and restore strategies yourself (e.g., backups, volume mounts).
 
   - If the server crashes without a backup, all data may be lost.
 
-7. Small community
+7. <strong>Small community</strong>
 
   - Though growing quickly, Coolify’s community is still small compared to Docker, Kubernetes, or Netlify → less troubleshooting documentation.
 
@@ -140,7 +140,7 @@ As a result, we always seek open-source platforms that allow us to operate with 
 ### 3. How to deploy a project in Coolify
 #### 3.1 Using Nixpacks 
 
-1. Create a Project
+1. <strong>Create a Project</strong>
 
 - 1: Click Projects.
 
@@ -155,7 +155,7 @@ As a result, we always seek open-source platforms that allow us to operate with 
     ![coolify_2](coolify_2.png)
 
 
-2. Create a Resource
+2. <strong>Create a Resource</strong>
 
 - 1: Click Add New Resource.
 
@@ -218,16 +218,19 @@ As a result, we always seek open-source platforms that allow us to operate with 
 
 <strong>For the other advanced features, please refer to the document.</strong>
 
+3. <strong>Deployment</strong>
 
-- 15: Let's create the nixpacks.toml file and push it to the branch used to deploy.
+- 1: Let's create the nixpacks.toml file and push it to the branch used to deploy.
 
     ![coolify_14](coolify_14.png)
 
 
-- Finally, click Deploy/Redeploy and check the deployment history. You can also check the logs and see that the application will be serving. It is a success!! :D.
+- 2: Click Deploy/Redeploy and check the deployment history. You can also check the logs and see that the application will be serving. It is a success!! :D.
 
     ![coolify_15](coolify_15.png)
 
     ![coolify_16](coolify_16.png)
 
-#### 3.2 Using Docker service (writing... :D)
+<strong>The Big Problem: The application deployed by Nixpacks couldn't mount volumes to a VPS for saving. Therefore, the old container would be replaced, and volumes could be deleted. Coolify still doesn't support mount volumes now :< . To address this problem, we navigate the deployment to Docker Service Resources. :D Let's begin the new journey!! </strong>  
+
+#### 3.2 Using Docker Service Resource (writing... :D)
