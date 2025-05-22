@@ -275,7 +275,7 @@ As a result, we always seek open-source platforms that allow us to operate with 
 ### 4 Conclusion
 
 This guide shows you the easiest way to run an application on Coolify. In upcoming posts, we’ll cover more advanced features such as integrating Git Actions, connecting S3 storage, setting up SSL, configuring a reverse proxy or VPN, adding Metrics/Kibana, notifications, and more. Follow our Git account to stay updated.
-Author: FunnyTrickyBee :D
+<p>Author: <span style="color: red;">FunnyTrickyBeeBee</span> :D</p>
 
   
 
