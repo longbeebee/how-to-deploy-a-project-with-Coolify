@@ -12,7 +12,8 @@
     - [2. Installation](#2-installation)
     - [3. How to deploy a project in Coolify](#3-how-to-deploy-a-project-in-coolify)
       - [3.1 Using Nixpacks](#31-using-nixpacks)
-      - [3.2 Using Docker service (writing... :D)](#32-using-docker-service-writing-d)
+      - [3.2 Using Docker Service Resource](#32-using-docker-service-resource)
+    - [4 Conclusion](#4-conclusion)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -233,4 +234,48 @@ As a result, we always seek open-source platforms that allow us to operate with 
 
 <strong>The Big Problem: The application deployed by Nixpacks couldn't mount volumes to a VPS for saving. Therefore, the old container would be replaced, and volumes could be deleted. Coolify still doesn't support mount volumes now, you must save volumes manually :< . To address this problem, we navigate the deployment to Docker Service Resources. :D Let's begin the new journey!! </strong>  
 
-#### 3.2 Using Docker Service Resource (writing... :D)
+#### 3.2 Using Docker Service Resource
+
+<strong>We still create project is the same in the previous steps.</strong>
+
+1. <strong>Create a Resource</strong>
+
+- 1: Click Add New Resource.
+
+    ![coolify_3](coolify_3.png)
+
+- 2: Choose Docker File.
+
+    ![coolify_17](coolify_17.png)
+
+<strong>We will use the both Docker file and Docker Compose file.</>
+
+2. <strong>Prepare Docker file and Docker Compose file</strong>
+
+- 1: Example for Docker file
+
+    ![coolify_18](coolify_18.png)
+
+- 2: Example for Docker Compose file
+
+    ![coolify_19](coolify_19.png)
+
+<strong>Exactly!! We could make the Application more efficient for saving Data by configure the specific path in "volumes" :D</strong>
+
+3. <strong>Configuration</strong>
+
+- 1: Configure The resource such Nixpack resource but remember that you must load the docker compose files in below:
+
+    ![coolify_20](coolify_20.png)
+
+- 2: Now, let's click deploy and enjoy the moment :D
+
+    ![coolify_21](coolify_21.png)
+
+### 4 Conclusion
+
+This guide shows you the easiest way to run an application on Coolify. In upcoming posts, we’ll cover more advanced features such as integrating Git Actions, connecting S3 storage, setting up SSL, configuring a reverse proxy or VPN, adding Metrics/Kibana, notifications, and more. Follow our Git account to stay updated.
+Author: FunnyTrickyBee :D
+
+  
+
