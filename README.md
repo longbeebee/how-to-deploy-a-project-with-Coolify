@@ -231,6 +231,6 @@ As a result, we always seek open-source platforms that allow us to operate with 
 
     ![coolify_16](coolify_16.png)
 
-<strong>The Big Problem: The application deployed by Nixpacks couldn't mount volumes to a VPS for saving. Therefore, the old container would be replaced, and volumes could be deleted. Coolify still doesn't support mount volumes now :< . To address this problem, we navigate the deployment to Docker Service Resources. :D Let's begin the new journey!! </strong>  
+<strong>The Big Problem: The application deployed by Nixpacks couldn't mount volumes to a VPS for saving. Therefore, the old container would be replaced, and volumes could be deleted. Coolify still doesn't support mount volumes now, you must save volumes manually :< . To address this problem, we navigate the deployment to Docker Service Resources. :D Let's begin the new journey!! </strong>  
 
 #### 3.2 Using Docker Service Resource (writing... :D)
